@@ -1,0 +1,177 @@
+@charset "UTF-8";
+
+html {
+    height: 100%;
+    font-size: 16px;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+html,
+body,
+nav,
+header,
+main,
+footer,
+article,
+section,
+div {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+body {
+    background-color: #f5e6cb;
+    color: #000000;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    grid-template-areas:
+        "nav nav nav nav nav nav nav nav"
+        "header header header header header header header header"
+        ". intro1 intro1 intro1 intro2 intro2 intro2 ."
+        ". content1 content1 content2 content2 content3 content3 ."
+        "footer footer footer footer footer footer footer footer";
+    grid-template-columns: auto repeat(6, min-content(auto, 200px))auto;
+    grid-template-rows: 150px min-content auto min content;
+    ;
+    display: grid;       
+
+}
+
+/* This is a comment in CSS av li
+nav {
+    grid: nav;
+    background-color: #2886d8;
+}
+
+ {
+    display: inline;
+}
+
+nav ul {
+    list-style: none;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+}
+
+nav a:link,
+nav a:visited {
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    display: inline-block;
+    border: 2px solid darkblue;
+    border-radius: 5px 25px 0px 5px;
+}
+
+nav a:hover {
+    color: white;
+    background-color: darkblue;
+    border: 2px solid darkblue;
+    border-radius: 5px 25px 0px 5px;
+}
+
+nav a:active {
+    background-color: lightblue;
+    border: 2px solid lightblue;
+}
+
+header {
+    grid-area: header;
+    background-color: #ffff00;
+    padding: 10px;
+}
+
+#inhl1 {
+    grid-area: inhl1;
+    background-color: #ededa0;
+    padding: 10px;
+}
+
+#inhlbld1 {
+    grid-area: inhlbld1;
+    background-color: #ec5e0c;
+    padding: 10px;
+}
+
+#inhl2 {
+    grid-area: inhl2;
+    background-color: #e4ce80;
+    padding: 10px;
+}
+
+#inhlbld2 {
+    grid-area: inhlbld2;
+    background-color: #ff6600;
+    padding: 10px;
+}
+
+#inhl3 {
+    grid-area: inhl3;
+    background-color: #dcaf67;
+    padding: 10px;
+}
+
+#inhlbld3 {
+    grid-area: inhlbld3;
+    background-color: #f54904;
+    padding: 10px;
+}
+
+footer {
+    grid-area: footer;
+    background-color: #2886d8;
+    padding: 10px;
+} */n
+nav {
+    grid-area: nav;
+    background-color: #4fcd6c;
+}
+
+header {
+    grid-area: header;
+    background-color: #d89228;
+    padding: 10px;
+}
+
+#intro1 {
+    grid-area: intro1;
+    background-color: #a0dfed;
+    padding: 10px;
+}
+
+#intro2 {
+    grid-area: intro2;
+    background-color: #79bcd2;
+    padding: 10px;
+}
+
+#content1 {
+    grid-area: content1;
+    background-color: #ededa0;
+    padding: 10px;
+}
+
+#content2 {
+    grid-area: content2;
+    background-color: #e4ce80;
+    padding: 10px;
+}
+
+#content3 {
+    grid-area: content3;
+    background-color: #dcaf67;
+    padding: 10px;
+}
+
+footer {
+    grid-area: footer;
+    background-color: #2886d8;
+    padding: 10px;
+}

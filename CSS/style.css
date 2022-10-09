@@ -1,0 +1,374 @@
+@charset "UTF-8";
+
+/* ----- Grundstil för webbsidan ----- */
+
+html {
+    height: 100%;
+    font-size: 16px;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+:root {
+    --icon-size: 30px;
+}
+
+
+
+html,
+body,
+nav,
+header,
+main,
+aside,
+footer,
+article,
+section,
+div {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ----- Layout ----- */
+
+body {
+    background-color: #7b15ce;
+    color: #000000;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    grid-template-columns: auto 50px 400px 400px 400px auto auto auto;
+    grid-template-rows: 100px 100px auto auto auto 55px;
+    grid-template-areas:
+        "header header header header header header header header"
+        ". nav nav nav nav nav nav ."
+        ". inhl1 inhl1 inhl1 inhl1  inhl1  inhl1 ."
+        ". inhl2 inhl2 inhl2 inhl2 inhl2 inhl2 ."
+        ". inhl3 inhl3 inhl3 inhl3 inhl3 inhl3 ."
+        "footer footer footer footer footer footer footer footer";
+
+    display: grid;
+
+}
+
+header {
+    grid-area: header;
+    border-image: url(/bld/transparantrep.png);
+    border-image-slice: 20%;
+    border-radius: 15px 15px 15px 15px;
+    border-image-width: 30px;
+    border-image-repeat: round;
+    text-align: center;
+}
+
+/*
+nav .knapp{
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #f4511e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 28px;
+    padding: 20px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}*/
+/*
+.knapp span{
+    cursor:pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}*/
+/*
+.knapp span::after{
+    height: var(--icon-size);
+    width: var(--icon-size);
+    background: url(/bld/compass2.png);
+    background-size: var(--icon-size) var(--icon-size);
+    background-repeat: no-repeat;
+    content:"";
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s; 
+}*/
+nav {
+    grid-area: nav;
+}
+nav .navboxar {
+    grid-area: nav;
+    background-color: rgb(0, 255, 136);
+    border: none;
+}
+.navboxar {
+    display: flex;
+    flex-shrink: 4;
+    flex-grow: 2;
+    flex-basis: 55px;
+    flex-direction: row;
+}
+.listclass {
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 4;
+    flex-basis: 55px;
+    flex-direction: row;
+    align-items: stretch;
+}
+.listclass button {
+    flex-grow: 1;
+    flex-shrink: 5;
+    flex-basis: 1px;
+    align-items: center;
+    padding-left: 25px;
+}
+.navknapp {
+    display: inherit;
+    border: none;
+    font-size: 28px;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+.navknapp span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+    padding-right: 25px;
+    justify-content:end;
+}
+.navknapp span:after {
+    content: url(/bld/ankarefarg.png);
+    position: relative;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+    font-size: 25px;
+}
+.navknapp:hover span {
+    padding-right: 25px;
+}
+.navknapp:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+#navlank1 {
+    order: 1;
+    background-color: #1da70b;
+}
+#navlank2 {
+    order: 2;
+    background-color: #7b15ce;
+}
+#navlank3 {
+    background-color: #5b66c5;
+    order: 3;
+}
+#navlank3 span, #navlank2 span, #navlank1 span{
+    color: #000000;
+}
+.inhl1 {
+    grid-area: inhl1;
+    background-color: #edc3a0;
+    display: flex;
+    padding: 0px 30px 30px 30px
+}
+.inhl1 div{
+    flex-shrink: 1;
+    flex-grow: 1;
+    flex-basis: 100px;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: row;
+}
+#text1{
+    order: 1;
+}
+#text2{
+    order: 2;
+}
+#text3{
+    order: 3;
+}
+#navex{
+    float: right;
+}
+.inhbld1 {
+    display: none;
+    grid-area: inhbld1;
+    background-position: left center;
+}
+div .inhlbld{
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 1;
+    align-items: center;
+}
+#pilregn{
+    display: none;
+}
+
+.inhl2 {
+    grid-area: inhl2;
+    background-color: #79bcd2;
+    padding: 10px;
+}
+
+#inhbld2 {
+    grid-area: inhbld2;
+    background-color: #39f300;
+    display: none;
+}
+
+#inhl3 {
+    grid-area: inhl3;
+    background-color: #5b66c5;
+    
+}
+
+#inhbld3 {
+    background-color: #89eb9a;
+    display: none;
+}
+
+footer {
+    grid-area: footer;
+    margin: 0px 0px 0px;
+    padding: 5px 0px 1px;
+    border-style: solid;
+    border-top: 1px;
+    color: rgb(0, 0, 0);
+    background-color: #d5e221;
+    text-align: center;
+
+}
+
+
+#compass {
+    display: none;
+}
+
+@media screen and (max-width: 1250px) {
+    body {
+        grid-template-columns: repeat(3, auto) 25px;
+        grid-template-rows: min-content 100px 400px min-content min-content 50px;
+        grid-template-areas:
+            "header header header header"
+            "nav nav nav nav"
+            "inhl1 inhl1 inhl1 inhbld1"
+            "inhl2 inhl2 inhl2 inhbld2"
+            "inhl3 inhl3 inhl3 inhbld3"
+            "footer footer footer footer";
+    }
+    .inhbld1 {
+        display: flex;
+        grid-area: inhbld1;
+        background-position: left center;
+    
+    }
+    div .inhlbld{
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: 1;
+        align-items: center;
+    }
+    #pilregn {
+        display: inline;
+        align-self: center;
+    }
+    .inhbld1{
+        cursor:pointer;
+        transition: transform 3s;
+        transition-timing-function: ease-in-out;
+    }
+    .inhbld1:hover{
+        transform:translate(-880px, 0px);
+        transition: transform 3s;
+        transition-timing-function: ease-in-out;
+    }
+    
+
+}
+@media screen and (max-width: 900px) {
+    body {
+        grid-template-columns: repeat(2, auto) 25px;
+        grid-template-rows: min-content 100px min-content min-content min-content 50px;
+        grid-template-areas:
+            "header header header"
+            "nav nav nav"
+            "inhl1 inhl1 inhbld1"
+            "inhl2 inhl2 inhbld2"
+            "inhl3 inhl3 inhbld3"
+            "footer footer footer";
+    }
+    .inhbld1 {
+        display: flexbox;
+        background-position: left center;
+    
+    }
+    div .inhlbld{
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: 50px;
+        align-items: center;
+    }
+    #pilregn {
+        display: inline;
+        align-self: center;
+    }
+    .inhbld1{
+        cursor:pointer;
+        transition: transform 3s;
+        transition-timing-function: ease-in-out;
+    }
+    .inhbld1:hover{
+        transform:translate(-880px, 0px);
+        transition: transform 3s;
+        transition-timing-function: ease-in-out;
+    }
+
+    #navex{
+        float: right;
+    }
+}
+@media screen and (max-width: 600px) {
+    body {
+        grid-template-columns:auto;
+        grid-template-rows: min-content auto auto min-content min-content 50px;
+        grid-template-areas:
+            "header"
+            "nav"
+            "inhl1"
+            "inhl2"
+            "inhl3"
+            "footer";
+    }
+
+}
+
+/*
+nav a:visited{
+#compass {
+    background-image: url(/bld/compass2.png);
+    width: 500px;
+    height: 500px;
+    display: inline-block;
+    cursor: pointer;
+    flex-wrap: inherit;
+}
+#compass ~ ul {
+    display: none;
+}
+#compass:checked ~ ul {
+    display: flex;
+}}
+but
