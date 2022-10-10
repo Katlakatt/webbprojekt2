@@ -4,12 +4,14 @@
 
 html {
     height: 100%;
+    width: 100%;
     font-size: 16px;
 }
 
 html,
 body {
     height: 100%;
+    width: 100%;
 }
 
 :root {
@@ -32,22 +34,18 @@ div {
     padding: 0;
     box-sizing: border-box;
 }
-
-
-/* ----- Layout ----- */
-
 body {
     background-color: #7b15ce;
     color: #000000;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    grid-template-columns: auto 50px 400px 400px 400px auto auto auto;
-    grid-template-rows: 100px 100px auto auto auto 55px;
+    grid-template-columns:auto auto minmax(auto,820px) minmax(auto,820px) minmax(auto,820px);
+    grid-template-rows:100px 100px minmax(auto,200px);
     grid-template-areas:
         "header header header header header header header header"
-        ". nav nav nav nav nav nav ."
-        ". inhl1 inhl1 inhl1 inhl1  inhl1  inhl1 ."
-        ". inhl2 inhl2 inhl2 inhl2 inhl2 inhl2 ."
-        ". inhl3 inhl3 inhl3 inhl3 inhl3 inhl3 ."
+        ". . nav nav nav nav . ."
+        ". . inhl1 inhl1 inhl1 inhl1 . ."
+        ". . inhl2 inhl2 inhl2 inhl2 . ."
+        ". . inhl3 inhl3 inhl3 inhl3 . ."
         "footer footer footer footer footer footer footer footer";
 
     display: grid;
@@ -123,7 +121,7 @@ nav .navboxar {
     flex-direction: row;
     align-items: stretch;
 }
-.listclass button {
+.listclass div{
     flex-grow: 1;
     flex-shrink: 5;
     flex-basis: 1px;
@@ -176,51 +174,42 @@ nav .navboxar {
 #navlank3 span, #navlank2 span, #navlank1 span{
     color: #000000;
 }
-.inhl1 {
+.inhl1{
     grid-area: inhl1;
     background-color: #edc3a0;
     display: flex;
-    padding: 0px 30px 30px 30px
+    padding: 0px 30px 30px 30px;
 }
-.inhl1 div{
-    flex-shrink: 1;
-    flex-grow: 1;
-    flex-basis: 100px;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-direction: row;
-}
-#text1{
-    order: 1;
-}
-#text2{
-    order: 2;
-}
-#text3{
-    order: 3;
-}
-#navex{
+.navex{
     float: right;
+    
+    
+}
+.navex2, .navex3{
+    scale: 0.75;
+    transition: 0.5s;
+}
+.navex2:hover {
+    transform: scale(1.5);
 }
 .inhbld1 {
     display: none;
     grid-area: inhbld1;
     background-position: left center;
 }
-div .inhlbld{
-    flex-grow: 0;
-    flex-shrink: 0;
-    flex-basis: 1;
-    align-items: center;
-}
+
+
 #pilregn{
     display: none;
 }
 
+
 .inhl2 {
     grid-area: inhl2;
     background-color: #79bcd2;
-    padding: 10px;
+    display: flex;
+    padding: 0px 30px 30px 30px;
+
 }
 
 #inhbld2 {
@@ -229,15 +218,52 @@ div .inhlbld{
     display: none;
 }
 
-#inhl3 {
+.inhl3 {
     grid-area: inhl3;
     background-color: #5b66c5;
-    
+    display: flex;
+    padding: 30px;
 }
 
 #inhbld3 {
     background-color: #89eb9a;
     display: none;
+}
+.inhl1 div, 
+.inhl2 div, 
+.inhl3 div{
+    flex-shrink: 1;
+    flex-grow: 1;
+    flex-basis: auto;
+    justify-content:right;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.plswork{
+    display: flex;
+}
+div .plswork{
+    flex-basis: auto;
+    flex-grow: 1;
+    flex-shrink: 5;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items:flex-start;
+
+}
+.plswork2{
+    display: flex;
+}
+div .plswork2{
+    flex-basis: auto;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    flex-direction: row;
+
 }
 
 footer {
@@ -252,7 +278,6 @@ footer {
 
 }
 
-
 #compass {
     display: none;
 }
@@ -260,13 +285,13 @@ footer {
 @media screen and (max-width: 1250px) {
     body {
         grid-template-columns: repeat(3, auto) 25px;
-        grid-template-rows: min-content 100px 400px min-content min-content 50px;
+        grid-template-rows: min-content 100px minmax(auto,220px) minmax(auto,222px) 255px 50px;
         grid-template-areas:
             "header header header header"
             "nav nav nav nav"
             "inhl1 inhl1 inhl1 inhbld1"
-            "inhl2 inhl2 inhl2 inhbld2"
-            "inhl3 inhl3 inhl3 inhbld3"
+            "inhl2 inhl2 inhl2 inhbld1"
+            "inhl3 inhl3 inhl3 inhbld1"
             "footer footer footer footer";
     }
     .inhbld1 {
@@ -278,7 +303,7 @@ footer {
     div .inhlbld{
         flex-grow: 1;
         flex-shrink: 1;
-        flex-basis: 1;
+        flex-basis: auto;
         align-items: center;
     }
     #pilregn {
@@ -295,7 +320,16 @@ footer {
         transition: transform 3s;
         transition-timing-function: ease-in-out;
     }
-    
+    .navex2{
+        scale: 0.2;
+        transition: 0.5s;
+    }
+    .navex2:hover {
+        transform: scale(1.5);
+    }
+    .navex3{
+        display: none;
+    }
 
 }
 @media screen and (max-width: 900px) {
@@ -306,12 +340,13 @@ footer {
             "header header header"
             "nav nav nav"
             "inhl1 inhl1 inhbld1"
-            "inhl2 inhl2 inhbld2"
-            "inhl3 inhl3 inhbld3"
+            "inhl2 inhl2 inhbld1"
+            "inhl3 inhl3 inhbld1"
             "footer footer footer";
     }
+   
     .inhbld1 {
-        display: flexbox;
+        display: flex;
         background-position: left center;
     
     }
@@ -335,15 +370,15 @@ footer {
         transition: transform 3s;
         transition-timing-function: ease-in-out;
     }
-
-    #navex{
-        float: right;
+    .navex2{
+        display: none;
     }
+
 }
 @media screen and (max-width: 600px) {
     body {
         grid-template-columns:auto;
-        grid-template-rows: min-content auto auto min-content min-content 50px;
+        grid-template-rows: min-content min-content min-content min-content min-content 50px;
         grid-template-areas:
             "header"
             "nav"
@@ -351,6 +386,9 @@ footer {
             "inhl2"
             "inhl3"
             "footer";
+    }
+    .inhbld1 {
+        display: none;
     }
 
 }
