@@ -196,14 +196,6 @@ div .navknapp {
     justify-content: stretch;
     grid-auto-rows: 175px;
 }
-
-.plswork3 {
-    display: grid;
-    grid-template-columns: 150px 150px;
-    justify-content: stretch;
-    grid-auto-rows: 75px;
-}
-
 .plswork2 div {
     border: #000000 solid 0px;
 }
