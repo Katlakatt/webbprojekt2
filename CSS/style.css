@@ -39,18 +39,16 @@ body {
     background-color: #7b15ce;
     color: #000000;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    grid-template-columns: auto auto minmax(auto, 350px) minmax(auto, 350px) minmax(auto, 350px) 50px;
-    grid-template-rows: 100px 100px max-content max-content max-content minmax(50px, auto);
+    grid-template-columns: auto 50px 600px minmax(auto, 350px) 50px 50px 50px auto;
+    grid-template-rows: 100px min-content min-content max-content auto min-content;
     grid-template-areas:
-        "header header header header header header header header"
+        ". header header header header header header ."
         ". . nav nav nav nav . ."
         ". . inhl1 inhl1 inhl1 inhl1 . ."
         ". . inhl2 inhl2 inhl2 inhl2 . ."
         ". . inhl3 inhl3 inhl3 inhl3 . ."
         "footer footer footer footer footer footer footer footer";
-
     display: grid;
-
 }
 
 header {
@@ -103,48 +101,44 @@ nav {
     grid-area: nav;
 }
 
-nav .navboxar {
-    grid-area: nav;
-    background-color: rgb(0, 255, 136);
-    border: none;
-}
-
-.navboxar {
-    display: flex;
-    flex-shrink: 4;
-    flex-grow: 2;
-    flex-basis: 55px;
-    flex-direction: row;
-}
+.navboxar {}
 
 .listclass {
     display: flex;
-    flex-grow: 1;
-    flex-shrink: 4;
-    flex-basis: 55px;
-    flex-direction: row;
-    align-items: stretch;
 }
 
-.listclass div {
-    flex-grow: 1;
-    flex-shrink: 5;
-    flex-basis: 1px;
-    align-items: center;
+/*div .listclass{
+    flex-basis: 100px;
+    flex-grow: 5;
+    flex-shrink: 2;
     padding-left: 25px;
+    flex-direction: column;
+    justify-content: flex-end;
+    
+}*/
+div .navknapp {
+    flex-basis: 50px;
+    flex-grow: 1;
+    flex-shrink: 0;
+    padding-left: 25px;
+    align-items: flex-start;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.inhl1 {
+    border: black solid 2px;
 }
 
 .navknapp {
-    display: inherit;
-    border: none;
-    font-size: 28px;
+    border: #000000 solid 2px;
+    font-size: 1.2rem;
     transition: all 0.5s;
     cursor: pointer;
 }
 
 .navknapp span {
     cursor: pointer;
-    display: inline-block;
     position: relative;
     transition: 0.5s;
     padding-right: 25px;
@@ -204,14 +198,33 @@ nav .navboxar {
     justify-content: stretch;
     grid-auto-rows: 175px;
 }
-
+.plswork3 {
+    display: grid;
+    grid-template-columns: 150px 150;
+    justify-content: stretch;
+    grid-auto-rows: 75px;
+}
 .plswork2 div {
-    border: #000000 solid 5px;
+    border: #000000 solid 0px;
+}
+
+#text1 {
+    display: flex;
+}
+
+div #text1 {
+    flex-basis: 5cm;
+    flex-grow: 2;
+    flex-shrink: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    padding-right: 50px;
+    padding-left: 50px;
 }
 
 .gridtext1 {
     order: 1;
-    align-self: stretch;
 }
 
 .gridtext2 {
@@ -226,66 +239,126 @@ nav .navboxar {
     order: 8;
 }
 
-.gridbild1 {
+#gridbild1 {
     order: 0;
 }
 
-.gridbild2 {
+#gridbild2 {
     order: 3;
 }
 
-.gridbild3 {
+#gridbild3 {
     order: 5;
 }
 
-.gridbild4 {
+#gridbild4 {
+    order: 7;
+}
+
+#kravbild {
     order: 7;
 }
 
 .hiddenbild {
     display: none;
-    transition: 0.5s;
 }
 
-.visabild {
-    transition: 0.5s;
-    transition: ease-in-out;
-    transition: transform 3s;
+.visabildknapp {
+    cursor: pointer;
 }
-
-.visabild:active~.hiddenbild {
-    /*sjukt svårt att hitta den här funktionen*/
-    display: inline-block;
-    transition: ease-in-out;
-    transition: 0.5s;
-    transform-box: initial;
+#gridbild1 button,
+#gridbild2 button,
+#gridbild3 button,
+#gridbild4 button,
+#kravbild button{
     position: absolute;
-    justify-content: left;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 15px 15px;
+    background-color: #1da70b;
 }
+
+.visabildknapp:active~#gridbild4 button,
+.visabildknapp:active~#gridbild3 button,
+.visabildknapp:active~#gridbild2 button
+.visabildknapp:active~#kravbild {
+    opacity: 0;
+    transition: ease-in-out 1s;
+}
+
+.visabildknapp button {
+    opacity: 1;
+    transition: ease-in-out 1s;
+}
+
+.visabildknapp img {
+    display: none;
+}
+
+.visabildknapp:active img {
+    display: flex;
+    position: sticky;
+    padding-right: 25px;
+
+}
+
+.visabildknapp:hover button {
+    /*transition timer funkar inte till detta? ingen ändring från inte visa till visa?*/
+    position: sticky;
+    padding-left: 11px;
+    transition: ease-in-out 0.1s;
+}
+
+/*
+.visabildknapp button:visited~img {
+    display: inline;
+    position: relative;
+    justify-content: right;
+    transition: 0.1s;
+    opacity: 1;
+}
+.navknapp {
+    display: inherit;
+    border: none;
+    font-size: 28px;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.navknapp span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+    padding-right: 25px;
+    justify-content: end;
+}
+
+.navknapp span:after {
+    content: url(/bld/ankarefarg.png);
+    position: relative;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+    font-size: 25px;
+}
+
+.navknapp:hover span {
+    padding-right: 25px;
+}
+
+.navknapp:hover span:after {
+    opacity: 1;
+    right: 0;
+}*/
 
 .navex {
     float: right;
 }
 
-.navex2,
-.navex3 {
-    cursor: pointer;
-    transition: 0.5s;
-    transition: ease-in-out;
-}
-
 #navid3 {
     opacity: 0;
-}
-.bildlank{
-    float: right;
-}
-.navex3 img:active {
-    transform: scale(0)
-}
-
-.navex2:hover {
-    transform: scale(1.5);
 }
 
 .inhbld1 {
@@ -347,11 +420,7 @@ div .plswork {
     flex-direction: row;
     justify-content: space-evenly;
     align-items: flex-start;
-    border: #000000 solid 5px;
-
 }
-
-
 footer {
     grid-area: footer;
     margin: 0px 0px 0px;
@@ -363,81 +432,59 @@ footer {
     text-align: center;
 
 }
-
 @media screen and (max-width: 1250px) {
     body {
-        grid-template-columns: auto 300px 10px;
-        grid-template-rows: 100px 100px auto auto auto 25px;
+        grid-template-columns: auto 300px 10px 25px;
+        grid-template-rows: 100px min-content min-content min-content min-content 50px;
         grid-template-areas:
-            "header header header ."
-            "nav nav nav ."
+            "header header header header"
+            "nav nav nav nav"
             "inhl1 inhl1 inhl1 inhbld1"
-            "inhl2 inhl2 inhl2 inhbld1"
-            "inhl3 inhl3 inhl3 inhbld1"
-            "footer footer footer .";
+            "inhl2 inhl2 inhl2 inhl2"
+            "inhl3 inhl3 inhl3 inhl3"
+            "footer footer footer footer";
     }
-
     .inhbld1 {
+        /*test för bild som kommer in, behöver bättre lösning för att bli snyggare*/
         grid-area: inhbld1;
         background-position: left center;
-
+        display: flex;
+        background-position: left center;
+        border: #000000 solid 2px;
+        background-color:#1da70b
     }
-
-    div .inhlbld {
+    div .inhlbld1 {
         flex-grow: 0;
         flex-shrink: 1;
         flex-basis: auto;
         align-items: center;
     }
-
     #pilregn {
         display: inline;
         align-self: center;
     }
-
     .inhbld1 {
         cursor: pointer;
         transition: transform 3s;
         transition-timing-function: ease-in-out;
     }
-
     .inhbld1:hover {
         transform: translate(-880px, 0px);
         transition: transform 3s;
         transition-timing-function: ease-in-out;
     }
-
-    .navex4 {
-        scale: 0.5;
-        transition: 0.5s;
-        transform: rotate(90deg);
-    }
-
-    .navex2 {
-        transform: scale(0.2);
-        transition: 0.5s;
-    }
-
-    .navex2:hover {
-        transform: scale(1.5);
-    }
-
-    .navex3 {
-        display: none;
-    }
-
 }
 
 @media screen and (max-width: 900px) {
     body {
         grid-template-columns: 100px auto 25px;
-        grid-template-rows: 100px 100px auto auto auto 25px;
+        grid-template-rows: 100px min-content min-content auto min-content min-content;
         grid-template-areas:
             "header header header"
             "nav nav nav"
             "inhl1 inhl1 inhbld1"
-            "inhl2 inhl2 inhbld1"
-            "inhl3 inhl3 inhbld1"
+            "inhl2 inhl2 inhl2"
+            "inhl3 inhl3 inhl3"
             "footer footer footer";
     }
 
@@ -453,33 +500,25 @@ footer {
         flex-basis: 50px;
         align-items: center;
     }
-
     #pilregn {
         display: inline;
         align-self: center;
     }
-
     .inhbld1 {
         cursor: pointer;
         transition: transform 3s;
         transition-timing-function: ease-in-out;
     }
-
     .inhbld1:hover {
         transform: translate(-880px, 0px);
         transition: transform 3s;
         transition-timing-function: ease-in-out;
     }
-
-    .navex2 {
-        display: none;
-    }
-
     .plswork2 {
         display: grid;
         grid-template-columns: 125px repeat(1, 400px);
         justify-content: stretch;
-        grid-auto-rows: 400px;
+        grid-auto-rows: 200px;
     }
 
 }
@@ -496,38 +535,30 @@ footer {
             "inhl3"
             "footer";
     }
-
     .inhbld1 {
         display: none;
     }
-    .plswork4{
-            cursor: pointer;
-            transition: transform 3s;
-            transition-timing-function: ease-in-out;
-            
+    .plswork4 {
+        cursor: pointer;
+        transition: transform 3s;
+        transition-timing-function: ease-in-out;
+
     }
     .plswork4:hover {
-        transform:scaleY(1.5);
+        transform: scaleY(1.5);
         transition: transform 3s;
         transition-timing-function: ease-in-out;
         background-color: white;
     }
-}
-
-/*
-nav a:visited{
-#compass {
-    background-image: url(/bld/compass2.png);
-    width: 500px;
-    height: 500px;
-    display: inline-block;
+#gridbild1 button,
+#gridbild2 button,
+#gridbild3 button,
+#gridbild4 button,
+#kravbild button{
+    position: absolute;
     cursor: pointer;
-    flex-wrap: inherit;
+    font-size: 0.8rem;
+    border-radius: 15px 15px;
+    background-color: rgb(25, 221, 90);
 }
-#compass ~ ul {
-    display: none;
 }
-#compass:checked ~ ul {
-    display: flex;
-}}
-but

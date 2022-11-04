@@ -21,50 +21,43 @@
             <!--<li><img src="/bld/compass2.png" alt="Kompass" class="knapp"></li>-->
         </div>
     </nav>
-
     <div class="inhl1">
         <div id="text1">
             <h4>1. Då man skapar en layout med grid används bl.a. CSS-egenskaperna grid-template-columns,
                 grid-template-rows
                 och grid-template-areas. Beskriv vad dessa används till?</h4>
             <p>"Grid-template-columns" sätter hur många kolumner som ska finnas i "griden" och bredden för var kolumn.
-                För
-                att få tre kolumner med bredd på 50 pixlar skrivs tre värden med ett blanksteg mellan var värde.</p>
-        </div>
-
+                Exempel kolumn 1 har 50px kolumn 2 100px</p>
+                <p>Liknande columns så är "grid-template-rows" för rader och används på liknande sätt för att bestämma hur
+                    många<img class="navex" src="/bld/navexempel.png" alt="Exempel på Nav">
+                    rader som ska ingå fast värdena blir istället höjden för var rad. </p> 
+                    <p>Grid-template-areas namnger blocken som skapas av column och row. </p>
+                        <p>Sammanfattat delar grid upp webbsidan i olika delar/boxar. Storlekarna och hur många bestäms i rad/kolumn och innehålet blir det som sätts i den griddelen</p>
+                    <p>Se exempel på bilden till höger/nedan sub 900 bredd eller hovra på pilen till höger för att se den första
+                        illustrationen av den här websidan.</p>
+                    </div>
     </div>
     <div class="inhbld1">
         <div id="pilregn">
-            <img src="/bld/pilregnb3.png" alt="">
+            <img src="/bld/pilregnb3.png" alt=""><!--Visas under 1250-900px-->
         </div>
-        <div id="hdnbild1">
-            <img src="/bld/layot2.jpg" alt="Layout">
+
+        <div>
+            <img src="/bld/layot2.jpg" alt="Layout"><!--Visas under 900px-->
         </div>
     </div>
 
     <div class="inhl2">
         <div id="text2">
-            <p>Liknande columns så är "grid-template-rows" för rader och används på liknande sätt för att bestämma hur
-                många
-                rader som ska ingå fast värdena blir istället höjden för var rad.</p>
+            <h4>2.	Vad är en media query och vad används den till?</h4>
+            <p>Används för att ändra hur webbsidan visas beroende på hur brett fönster användaren använder. Tanken är att vare sig användaren har hemsidan på en dator och använder hela skärmen för webbläsaren eller surfar på en mobiltelefon så ska webbsidan anpassas. På så sätt kan webbsidan visas oberoende av fönsterstorlek</p>
+            <p>Exempel: Om användaren har en dator ska fyra rader visas medan en mobiltelefons webbläsare visar en rad. Skulle mobilanvändaren vrida på telefonen och då få en bredare skärm skulle kanske två eller tre visas.</p>
         </div>
     </div>
     <div class="inhl3">
         <div class="plswork">
-            <p>Grid-template-areas namnger blocken som skapas av column och row. Blocken namnges inom citattecken " "
-                med
-                ett element eller en punkt för ett område som ex inte används. Inom vart citattecken ska ett eller flera
-                id:n eller liknande skrivas in för så många kolumner som finns i "Grid-template-columns". Var kolumn
-                skiljs
-                med ett blanksteg </p>
-            <p>För var rad som bestämts i "grid-template-rows" så ska två citattecken skrivas. (Var rad ska då också ha
-                samma antal kolumner)</p>
-            <p>Se exempel på bilden till höger/nedan sub 900 bredd eller hovra på pilen till höger för att se den första
-                illustrationen av den här websidan.</p> <img class="navex" src="/bld/navexempel.png" alt="Exempel på Nav">
+
             </div>
-    </div>
-    <div id="inhbld3">
-        <p>bild3</p>
     </div>
     <footer>
         <p>Alexandra Nova Randver 2022/10/09</p>
