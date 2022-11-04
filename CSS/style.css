@@ -101,8 +101,6 @@ nav {
     grid-area: nav;
 }
 
-.navboxar {}
-
 .listclass {
     display: flex;
 }
@@ -198,12 +196,14 @@ div .navknapp {
     justify-content: stretch;
     grid-auto-rows: 175px;
 }
+
 .plswork3 {
     display: grid;
-    grid-template-columns: 150px 150;
+    grid-template-columns: 150px 150px;
     justify-content: stretch;
     grid-auto-rows: 75px;
 }
+
 .plswork2 div {
     border: #000000 solid 0px;
 }
@@ -266,11 +266,12 @@ div #text1 {
 .visabildknapp {
     cursor: pointer;
 }
+
 #gridbild1 button,
 #gridbild2 button,
 #gridbild3 button,
 #gridbild4 button,
-#kravbild button{
+#kravbild button {
     position: absolute;
     cursor: pointer;
     font-size: 1rem;
@@ -280,8 +281,7 @@ div #text1 {
 
 .visabildknapp:active~#gridbild4 button,
 .visabildknapp:active~#gridbild3 button,
-.visabildknapp:active~#gridbild2 button
-.visabildknapp:active~#kravbild {
+.visabildknapp:active~#gridbild2 button .visabildknapp:active~#kravbild {
     opacity: 0;
     transition: ease-in-out 1s;
 }
@@ -421,6 +421,7 @@ div .plswork {
     justify-content: space-evenly;
     align-items: flex-start;
 }
+
 footer {
     grid-area: footer;
     margin: 0px 0px 0px;
@@ -432,6 +433,7 @@ footer {
     text-align: center;
 
 }
+
 @media screen and (max-width: 1250px) {
     body {
         grid-template-columns: auto 300px 10px 25px;
@@ -444,6 +446,7 @@ footer {
             "inhl3 inhl3 inhl3 inhl3"
             "footer footer footer footer";
     }
+
     .inhbld1 {
         /*test för bild som kommer in, behöver bättre lösning för att bli snyggare*/
         grid-area: inhbld1;
@@ -451,23 +454,27 @@ footer {
         display: flex;
         background-position: left center;
         border: #000000 solid 2px;
-        background-color:#1da70b
+        background-color: #1da70b
     }
+
     div .inhlbld1 {
         flex-grow: 0;
         flex-shrink: 1;
         flex-basis: auto;
         align-items: center;
     }
+
     #pilregn {
         display: inline;
         align-self: center;
     }
+
     .inhbld1 {
         cursor: pointer;
         transition: transform 3s;
         transition-timing-function: ease-in-out;
     }
+
     .inhbld1:hover {
         transform: translate(-880px, 0px);
         transition: transform 3s;
@@ -500,20 +507,24 @@ footer {
         flex-basis: 50px;
         align-items: center;
     }
+
     #pilregn {
         display: inline;
         align-self: center;
     }
+
     .inhbld1 {
         cursor: pointer;
         transition: transform 3s;
         transition-timing-function: ease-in-out;
     }
+
     .inhbld1:hover {
         transform: translate(-880px, 0px);
         transition: transform 3s;
         transition-timing-function: ease-in-out;
     }
+
     .plswork2 {
         display: grid;
         grid-template-columns: 125px repeat(1, 400px);
@@ -535,30 +546,34 @@ footer {
             "inhl3"
             "footer";
     }
+
     .inhbld1 {
         display: none;
     }
+
     .plswork4 {
         cursor: pointer;
         transition: transform 3s;
         transition-timing-function: ease-in-out;
 
     }
+
     .plswork4:hover {
         transform: scaleY(1.5);
         transition: transform 3s;
         transition-timing-function: ease-in-out;
         background-color: white;
     }
-#gridbild1 button,
-#gridbild2 button,
-#gridbild3 button,
-#gridbild4 button,
-#kravbild button{
-    position: absolute;
-    cursor: pointer;
-    font-size: 0.8rem;
-    border-radius: 15px 15px;
-    background-color: rgb(25, 221, 90);
-}
+
+    #gridbild1 button,
+    #gridbild2 button,
+    #gridbild3 button,
+    #gridbild4 button,
+    #kravbild button {
+        position: absolute;
+        cursor: pointer;
+        font-size: 0.8rem;
+        border-radius: 15px 15px;
+        background-color: rgb(25, 221, 90);
+    }
 }
