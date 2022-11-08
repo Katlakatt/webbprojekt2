@@ -1,7 +1,5 @@
 @charset "UTF-8";
 
-/* ----- Grundstil för webbsidan ----- */
-
 html {
     height: 100%;
     width: 100%;
@@ -61,42 +59,7 @@ header {
     text-align: center;
 }
 
-/*
-nav .knapp{
-    display: inline-block;
-    border-radius: 4px;
-    background-color: #f4511e;
-    border: none;
-    color: #FFFFFF;
-    text-align: center;
-    font-size: 28px;
-    padding: 20px;
-    width: 200px;
-    transition: all 0.5s;
-    cursor: pointer;
-    margin: 5px;
-}*/
-/*
-.knapp span{
-    cursor:pointer;
-    display: inline-block;
-    position: relative;
-    transition: 0.5s;
-}*/
-/*
-.knapp span::after{
-    height: var(--icon-size);
-    width: var(--icon-size);
-    background: url(/bld/compass2.png);
-    background-size: var(--icon-size) var(--icon-size);
-    background-repeat: no-repeat;
-    content:"";
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    right: -20px;
-    transition: 0.5s; 
-}*/
+
 nav {
     grid-area: nav;
 }
@@ -105,15 +68,6 @@ nav {
     display: flex;
 }
 
-/*div .listclass{
-    flex-basis: 100px;
-    flex-grow: 5;
-    flex-shrink: 2;
-    padding-left: 25px;
-    flex-direction: column;
-    justify-content: flex-end;
-    
-}*/
 div .navknapp {
     flex-basis: 50px;
     flex-grow: 1;
@@ -196,6 +150,7 @@ div .navknapp {
     justify-content: stretch;
     grid-auto-rows: 175px;
 }
+
 .plswork2 div {
     border: #000000 solid 0px;
 }
@@ -300,50 +255,6 @@ div #text1 {
     padding-left: 11px;
     transition: ease-in-out 0.1s;
 }
-
-/*
-.visabildknapp button:visited~img {
-    display: inline;
-    position: relative;
-    justify-content: right;
-    transition: 0.1s;
-    opacity: 1;
-}
-.navknapp {
-    display: inherit;
-    border: none;
-    font-size: 28px;
-    transition: all 0.5s;
-    cursor: pointer;
-}
-
-.navknapp span {
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    transition: 0.5s;
-    padding-right: 25px;
-    justify-content: end;
-}
-
-.navknapp span:after {
-    content: url(/bld/ankarefarg.png);
-    position: relative;
-    opacity: 0;
-    top: 0;
-    right: -20px;
-    transition: 0.5s;
-    font-size: 25px;
-}
-
-.navknapp:hover span {
-    padding-right: 25px;
-}
-
-.navknapp:hover span:after {
-    opacity: 1;
-    right: 0;
-}*/
 
 .navex {
     float: right;
