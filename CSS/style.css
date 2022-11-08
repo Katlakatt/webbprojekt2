@@ -23,7 +23,7 @@ body,
 nav,
 header,
 main,
-aside,
+aside,navex
 footer,
 article,
 section,
@@ -205,11 +205,6 @@ div #text1 {
 #kravbild {
     order: 7;
 }
-
-.hiddenbild {
-    display: none;
-}
-
 .visabildknapp {
     cursor: pointer;
 }
@@ -266,7 +261,6 @@ div #text1 {
 
 .inhbld1 {
     display: none;
-    grid-area: inhbld1;
     background-position: left center;
 }
 
@@ -281,22 +275,13 @@ div #text1 {
     padding: 0px 30px 30px 30px;
 }
 
-#inhbld2 {
-    grid-area: inhbld2;
-    background-color: #39f300;
-    display: none;
-}
+
 
 .inhl3 {
     grid-area: inhl3;
     background-color: #5b66c5;
     display: flex;
     padding: 30px;
-}
-
-#inhbld3 {
-    background-color: #89eb9a;
-    display: none;
 }
 
 .inhl1 div,
@@ -359,14 +344,6 @@ footer {
         border: #000000 solid 2px;
         background-color: #1da70b
     }
-
-    div .inhlbld1 {
-        flex-grow: 0;
-        flex-shrink: 1;
-        flex-basis: auto;
-        align-items: center;
-    }
-
     #pilregn {
         display: inline;
         align-self: center;
